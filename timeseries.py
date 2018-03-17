@@ -7,12 +7,7 @@ from sklearn.metrics import mean_squared_error
 #https://people.duke.edu/~rnau/411arim.htm
 # https://machinelearningmastery.com/arima-for-time-series-forecasting-with-python/
 class Timeseries:
-    """
-    Module which provides Atelier DB access.
-    It contains knowledge of the DB schema and maps higher level
-    domain models into DB structures that match the DB schema.
-    """
-
+  
     def __init__(self):
         print "Create timeseries!!!!!"
     def parser(x):
