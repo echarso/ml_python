@@ -9,12 +9,7 @@ def parser(x):
     return datetime.strptime('190'+x, '%Y-%m')
 
 class Controller:
-    """
-    Module which provides Atelier DB access.
-    It contains knowledge of the DB schema and maps higher level
-    domain models into DB structures that match the DB schema.
-    """
-
+    
     def __init__(self):
         print "Create controller!!!!!"
 
