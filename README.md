@@ -1,10 +1,21 @@
 # Project Title
 
-One Paragraph of project description goes here
+Machine learning life cycle management 
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions are for how to set up and to connect to MLFLOW service. 
+Steps :
+
+1. order MLFLOW instance for your organization. What this order means ?
+   1.1 creating an openshift/sebshift service that listens to your model metrics 
+   1.2 creating user name and password so as your team can access the mlflow instance 
+   1.3 creating a db in the MSSQL server that we maintain for storing machine learning models metrics
+   1.4 creating a SSH keey that you need to install to your training enviroment so as to be able to store the models to the         model registry . 
+
+2. download the recommended version of mlflow library to your training enviroment. pip install mlflow is the command.
+3. connect your training cod e
+  
 
 ### Prerequisites
 
