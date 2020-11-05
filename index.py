@@ -8,21 +8,13 @@ app = Flask(__name__)
 con = Controller();
 
 
-@app.route("/")
-def get_search():
-    print "==================="
-    ret = con.predict()
-    print [row[0] for row in ret]
-    print "==================="
-
-    return json.dumps([row[0] for row in ret])
-
 
 @app.route("/forecast")
 def forecast():
     print "==================="
     ret = con.predict()
     print [row[0] for row in ret]
+    return ret
     print "==================="
 
     return json.dumps([row[0] for row in ret])
