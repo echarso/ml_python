@@ -4,8 +4,6 @@ from matplotlib import pyplot
 from statsmodels.tsa.arima_model import ARIMA
 from sklearn.metrics import mean_squared_error
 
-#https://people.duke.edu/~rnau/411arim.htm
-# https://machinelearningmastery.com/arima-for-time-series-forecasting-with-python/
 class Timeseries:
   
     def __init__(self):
