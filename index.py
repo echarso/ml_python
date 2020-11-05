@@ -1,4 +1,3 @@
-#http://www.skybert.net/python/developing-a-restful-micro-service-in-python/
 #! /usr/bin/env python
 import json
 from flask import Flask
