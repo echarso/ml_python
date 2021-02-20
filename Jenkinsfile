@@ -33,11 +33,11 @@ pipeline {
             steps {
 		    print "DEBUG: parameter deploy "
 		     withCredentials([file(credentialsId: 'teanGCP', variable: 'FILE')]) {
+         checkout scm
 
 				sh """
 					#!/bin/bash
 					pip install python
-          checkout scm
           ls;
 					echo "-----------------------------------------";
 					echo "deploy stage";
@@ -56,7 +56,7 @@ pipeline {
 					 gcloud auth activate-service-account --key-file ${FILE};
 
 					 gcloud config list;
-           
+
 					 gcloud app deploy ;
            echo "Deployed to GCP"
 				"""
