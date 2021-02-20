@@ -37,7 +37,11 @@ pipeline {
           				sh """
           					#!/bin/bash
           					pip install python
+                    echo "----------------------------------------- MINIO DOWNLOAD DONE ";
+                    wget https://dl.min.io/client/mc/release/linux-amd64/mc
+                    chmod +x mc
                     echo "----------------------------------------- minio connection ";
+
                     ./mc alias set minio http://172.21.0.5:9000 AKIAIOSFODNN7EXAMPLE wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
                     ./mc cp --recursive ${source} .
                     ls;
