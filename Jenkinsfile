@@ -37,6 +37,8 @@ pipeline {
 				sh """
 					#!/bin/bash
 					pip install python
+          checkout scm
+          ls;
 					echo "-----------------------------------------";
 					echo "deploy stage";
 					curl -o /tmp/google-cloud-sdk.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-225.0.0-linux-x86_64.tar.gz;
@@ -54,8 +56,7 @@ pipeline {
 					 gcloud auth activate-service-account --key-file ${FILE};
 
 					 gcloud config list;
-           checkout scm
-           ls;
+           
 					 gcloud app deploy ;
            echo "Deployed to GCP"
 				"""
