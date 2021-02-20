@@ -31,35 +31,19 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-		    print "DEBUG: parameter deploy "
-		     withCredentials([file(credentialsId: 'teanGCP', variable: 'FILE')]) {
-         checkout scm
+          		    print "DEBUG: parameter deploy "
+          		    withCredentials([file(credentialsId: 'teanGCP', variable: 'FILE')]) {
+                  checkout scm
+          				sh """
+          					#!/bin/bash
+          					pip install python
+                    echo "----------------------------------------- minio connection ";
+                    ./mc alias set minio http://172.21.0.5:9000 AKIAIOSFODNN7EXAMPLE wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+                    ./mc cp --recursive ${source} .
+                    ls;
+          					echo "-----------------------------------------";
 
-				sh """
-					#!/bin/bash
-					pip install python
-          ls;
-					echo "-----------------------------------------";
-					echo "deploy stage";
-					curl -o /tmp/google-cloud-sdk.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-225.0.0-linux-x86_64.tar.gz;
-					echo "-----------------------------------------";
-					tar -xvf /tmp/google-cloud-sdk.tar.gz -C /tmp/;
-					echo "-----------------------------------------";
-					/tmp/google-cloud-sdk/install.sh -q;
-					echo "-----------------------------------------";
-                   			source /tmp/google-cloud-sdk/path.bash.inc;
-					source /tmp/google-cloud-sdk/completion.bash.inc;
-					source ~/.bashrc;
-					echo "-----------------------------------------";
-
-					 gcloud config set project ${GOOGLE_PROJECT_ID};
-					 gcloud auth activate-service-account --key-file ${FILE};
-
-					 gcloud config list;
-
-					 gcloud app deploy ;
-           echo "Deployed to GCP"
-				"""
+          				"""
 				}
 			}
             }
