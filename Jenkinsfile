@@ -43,7 +43,7 @@ pipeline {
                     echo "----------------------------------------- minio connection ";
 
                     ./mc alias set minio http://172.21.0.5:9000 AKIAIOSFODNN7EXAMPLE wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
-                    ./mc cp --recursive ${source} .
+                    ./mc cp --recursive minio/mlflow/1/c987a6648b4845eab146f34eddd1ce96/artifacts/model .
                     ls;
           					echo "-----------------------------------------";
 
