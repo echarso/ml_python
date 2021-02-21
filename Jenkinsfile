@@ -33,19 +33,27 @@ pipeline {
             steps {
           		    print "DEBUG: parameter deploy "
           		    withCredentials([file(credentialsId: 'teanGCP', variable: 'FILE')]) {
-                  checkout scm
-          				sh """
-          					#!/bin/bash
-          					curl -O google-cloud-sdk.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-328.0.0-linux-x86.tar.gz
-          					echo "-----------------------------------------";
-                    ls
-                    pwd
-          					tar -xvf google-cloud-sdk.tar.gz ;
-          					echo "-----------------------------------------";
-          					./google-cloud-sdk/install.sh -q;
-          					echo "-----------------------------------------";
+                        checkout scm
+                				sh """
+                					#!/bin/bash
+                          echo "---------- START -------------------------------";
+                          curl -o /tmp/google-cloud-sdk.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-225.0.0-linux-x86_64.tar.gz;
+                					echo "-----------------------------------------";
+                					tar -xvf /tmp/google-cloud-sdk.tar.gz -C /tmp/;
+                					echo "-----------------------------------------";
+                					/tmp/google-cloud-sdk/install.sh -q;
+                					echo "-----------------------------------------";
+                          source /tmp/google-cloud-sdk/path.bash.inc;
+                					source /tmp/google-cloud-sdk/completion.bash.inc;
+                					echo "-----------------------------------------";
 
-          					echo "-----------------------------------------";
+                					 gcloud config set project ${GOOGLE_PROJECT_ID};
+                					 gcloud auth activate-service-account --key-file ${FILE};
+
+                					 gcloud config list;
+                					 gcloud app deploy -q;
+
+                					echo "-----------------------------------------";
           				"""
 				}
 			}
