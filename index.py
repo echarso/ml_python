@@ -9,7 +9,7 @@ con = Controller();
 
 
 @app.route("/")
-def forecast():
+def entry():
     return app.send_static_file('templates/index.html')
 
 
