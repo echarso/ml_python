@@ -43,15 +43,14 @@ pipeline {
                 					echo "-----------------------------------------";
                 					/tmp/google-cloud-sdk/install.sh -q;
                 					echo "-----------------------------------------";
-                          source /tmp/google-cloud-sdk/path.bash.inc;
-                					source /tmp/google-cloud-sdk/completion.bash.inc;
+                        
                 					echo "-----------------------------------------";
 
-                					 gcloud config set project ${GOOGLE_PROJECT_ID};
-                					 gcloud auth activate-service-account --key-file ${FILE};
+                					 /tmp/google-cloud-sdk/bin/gcloud config set project ${GOOGLE_PROJECT_ID};
+                					 /tmp/google-cloud-sdk/bin/gcloud auth activate-service-account --key-file ${FILE};
 
-                					 gcloud config list;
-                					 gcloud app deploy -q;
+                					 /tmp/google-cloud-sdk/bin/gcloud config list;
+                					 /tmp/google-cloud-sdk/bin/gcloud app deploy -q;
 
                 					echo "-----------------------------------------";
           				"""
