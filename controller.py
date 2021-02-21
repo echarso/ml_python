@@ -14,6 +14,6 @@ class Controller:
 
 
     def predict(self):
-        print ("do staff inside ")
+        print ("do staff inside .......")
         ## oups that is a steal!!!
         self.pyfunc_model.predict(pd.DataFrame(self.data))

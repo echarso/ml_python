@@ -8,13 +8,18 @@ app = Flask(__name__)
 con = Controller();
 
 
+@app.route("/")
+def forecast():
+    return app.send_static_file('templates/index.html')
+
+
 
 @app.route("/forecast")
 def forecast():
     ret = con.predict()
     return ret
 
-    return json.dumps([row[0] for row in ret])
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    print('application started')
+    app.run(debug=True, port=8080)
