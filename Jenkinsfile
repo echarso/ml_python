@@ -49,7 +49,7 @@ pipeline {
                     echo "deploy stage";
           					curl -O google-cloud-sdk.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-328.0.0-linux-x86.tar.gz
           					echo "-----------------------------------------";
-          					tar -xvf google-cloud-sdk.tar.gz -C /tmp/;
+          					tar -xvf google-cloud-sdk.tar.gz ;
           					echo "-----------------------------------------";
           					./google-cloud-sdk/install.sh -q;
           					echo "-----------------------------------------";
