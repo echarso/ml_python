@@ -36,19 +36,10 @@ pipeline {
                   checkout scm
           				sh """
           					#!/bin/bash
-          					pip install python
-                    echo "----------------------------------------- MINIO DOWNLOAD DONE ";
-                    wget https://dl.min.io/client/mc/release/linux-amd64/mc
-                    chmod +x mc
-                    echo "----------------------------------------- minio connection ";
-
-                    ./mc alias set minio http://172.21.0.5:9000 AKIAIOSFODNN7EXAMPLE wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
-                    ./mc cp --recursive minio/mlflow/1/c987a6648b4845eab146f34eddd1ce96/artifacts/model .
-                    ls;
-          					echo "-----------------------------------------";
-                    echo "deploy stage";
           					curl -O google-cloud-sdk.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-328.0.0-linux-x86.tar.gz
           					echo "-----------------------------------------";
+                    ls
+                    pwd
           					tar -xvf google-cloud-sdk.tar.gz ;
           					echo "-----------------------------------------";
           					./google-cloud-sdk/install.sh -q;
