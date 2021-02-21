@@ -1,4 +1,3 @@
-from timeseries import Timeseries
 from pandas import datetime
 from pandas import read_csv
 from mlflow import pyfunc
@@ -18,4 +17,3 @@ class Controller:
         print ("do staff inside ")
         ## oups that is a steal!!!
         self.pyfunc_model.predict(pd.DataFrame(self.data))
-        
