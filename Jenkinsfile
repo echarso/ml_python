@@ -47,13 +47,13 @@ pipeline {
                     ls;
           					echo "-----------------------------------------";
                     echo "deploy stage";
-          					curl -O /tmp/google-cloud-sdk.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-328.0.0-linux-x86.tar.gz
+          					curl -O google-cloud-sdk.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-328.0.0-linux-x86.tar.gz
           					echo "-----------------------------------------";
-          					tar -xvf /tmp/google-cloud-sdk.tar.gz -C /tmp/;
+          					tar -xvf google-cloud-sdk.tar.gz -C /tmp/;
           					echo "-----------------------------------------";
-          					./tmp/google-cloud-sdk/install.sh -q;
+          					./google-cloud-sdk/install.sh -q;
           					echo "-----------------------------------------";
-                  
+
           					echo "-----------------------------------------";
           				"""
 				}
