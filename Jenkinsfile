@@ -46,7 +46,15 @@ pipeline {
                     ./mc cp --recursive minio/mlflow/1/c987a6648b4845eab146f34eddd1ce96/artifacts/model .
                     ls;
           					echo "-----------------------------------------";
-
+                    echo "deploy stage";
+          					curl -O /tmp/google-cloud-sdk.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-328.0.0-linux-x86.tar.gz
+          					echo "-----------------------------------------";
+          					tar -xvf /tmp/google-cloud-sdk.tar.gz -C /tmp/;
+          					echo "-----------------------------------------";
+          					./tmp/google-cloud-sdk/install.sh -q;
+          					echo "-----------------------------------------";
+                  
+          					echo "-----------------------------------------";
           				"""
 				}
 			}

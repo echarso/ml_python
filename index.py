@@ -11,10 +11,7 @@ con = Controller();
 
 @app.route("/forecast")
 def forecast():
-    print "==================="
     ret = con.predict()
-    print [row[0] for row in ret]
-    print "==================="
     return ret
 
     return json.dumps([row[0] for row in ret])
