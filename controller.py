@@ -13,7 +13,7 @@ class Controller:
         self.pyfunc_model = pyfunc.load_model('model')
 
 
-    def predict(self):
+    def predict(self,data):
         print ("do staff inside .......")
         ## oups that is a steal!!!
-        self.pyfunc_model.predict(pd.DataFrame(self.data))
+        self.pyfunc_model.predict(data)
