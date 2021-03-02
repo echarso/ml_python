@@ -42,7 +42,7 @@ pipeline {
                           wget https://dl.min.io/client/mc/release/linux-amd64/mc
                           chmod +x mc
 
-                          ./mc alias set minio http://172.21.0.3:9000 AKIAIOSFODNN7EXAMPLE wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+                          ./mc alias set minio http://s3:9000 AKIAIOSFODNN7EXAMPLE wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
                           ./mc cp --recursive minio/mlflow/1/c987a6648b4845eab146f34eddd1ce96/artifacts/model .
                           echo "----------------------------------------- MODEL DOWNLOADED ";
                           ls
