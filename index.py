@@ -10,7 +10,7 @@ con = Controller();
 
 @app.route("/")
 def entry():
-    print('application started indes---saddas')
+    print('application started in')
     return render_template('index.html')
 
 
@@ -23,4 +23,4 @@ def forecast():
 
 if __name__ == '__main__':
     print('application started')
-    app.run(host='0.0.0.0',debug=True)
+    app.run(port=8080,debug=True)
