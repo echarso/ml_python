@@ -6,7 +6,7 @@ class Controller:
 
     def __init__(self):
         print( "Create controller!!!!!")
-        ##self.pyfunc_model = pyfunc.load_model('model')
+        self.pyfunc_model = pyfunc.load_model('model')
 
 
     def predict(self,data):

@@ -23,4 +23,4 @@ def forecast():
 
 if __name__ == '__main__':
     print('application started')
-    app.run(port=8080,debug=True)
+    app.run(debug=True)
