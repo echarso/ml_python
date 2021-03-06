@@ -1,5 +1,3 @@
-runtime: python38
-service: ml-inference
-entrypoint: python main.py
-runtime_config:
-      python_version: 3
+runtime: python39
+service: mlops
+

@@ -9,8 +9,8 @@ con = Controller();
 
 
 @app.route("/")
-def entry():
-    print('application started in')
+def root():
+    print('application started in returning root ')
     return render_template('index.html')
 
 
