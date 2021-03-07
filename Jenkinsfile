@@ -57,10 +57,12 @@ pipeline {
                 		/tmp/google-cloud-sdk/bin/gcloud auth activate-service-account --key-file ${FILE};
 
                 		/tmp/google-cloud-sdk/bin/gcloud config list;
-                		cd venv/bin
+                		ls venv/bin
                 		unlink venv/bin/python
                 		unlink venv/bin/python3.9
                 		unlink venv/bin/python3
+                		cd venv/bin
+
                 		ln -s  /usr/bin/python3 python3
 
                 		/tmp/google-cloud-sdk/bin/gcloud app deploy -q;
