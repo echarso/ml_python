@@ -1,5 +1,6 @@
 #! /usr/bin/env python
 import json
+import json
 from flask import Flask
 from flask import render_template
 from controller import Controller
@@ -17,7 +18,9 @@ def root():
 
 @app.route("/forecast")
 def forecast():
-    ret = con.predict([{5:'6'}])
+    print(request.data)
+    data = json.loads(request.data)
+    ret = con.predict()
     return ret
 
 

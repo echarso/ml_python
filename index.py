@@ -17,6 +17,8 @@ def entry():
 
 @app.route("/forecast")
 def forecast():
+    request_data = request.get_json()
+    print
     ret = con.predict([{5:'6'}])
     return ret
 
