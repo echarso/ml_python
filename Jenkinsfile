@@ -64,7 +64,7 @@ pipeline {
                 		cd venv/bin
 
                 		ln -s  /usr/bin/python3 python3
-
+                        cd ../..
                 		/tmp/google-cloud-sdk/bin/gcloud app deploy -q;
 
                 		echo "----------------------------------------- ALL DONE";
