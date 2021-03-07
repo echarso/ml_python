@@ -18,6 +18,8 @@ def root():
 
 @app.route("/forecast")
 def forecast():
+    print('forecast api')
+
     print(request.data)
     data = json.loads(request.data)
     ret = con.predict()
