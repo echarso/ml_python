@@ -16,14 +16,17 @@ def root():
 
 
 
-@app.route("/forecast")
+@app.route("/forecast",methods = ['POST' ])
 def forecast():
     print('forecast api')
 
     print(request.data)
-    data = json.loads(request.data)
-    ret = con.predict()
-    return ret
+    print(request.get_json())
+    print('--------------------------------')
+    ret = con.predict(request.get_json())
+    print("**********************sending back ", type(ret))
+
+    return str(ret)
 
 
 if __name__ == '__main__':
