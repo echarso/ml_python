@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
-    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/mlruns/0/3f9423b57ab64dc7b41196475c2352a6/artifacts/model/tfmodel" vcs="Git" />
+    <mapping directory="$USER_HOME$/mlops" vcs="Git" />
   </component>
 </project>
