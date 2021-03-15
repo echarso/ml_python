@@ -62,6 +62,7 @@ def get_regularized_model(wd,rate):
     ])
     return model
 #model = get_model()
+print(train_data.shape[1],)
 model = get_regularized_model(1e-5,0.3)
 
 model.compile(optimizer='adam',loss='mse',metrics=['mae'])
@@ -75,6 +76,7 @@ with mlflow.start_run():
             batch_size=64, epochs=100,verbose=False,
             callbacks=[earlystopping])
     model.evaluate(test_data, test_target, verbose=2)
+    model.save('model_folder/')
     mlflow.tensorflow.log_model(tf_saved_model_dir='model_folder/',
                                tf_meta_graph_tags=['serve'],
                                tf_signature_def_key='serving_default',

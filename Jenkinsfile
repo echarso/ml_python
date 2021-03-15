@@ -17,6 +17,10 @@ pipeline {
 		script {
 			  sh """
 			  python --version
+			  rm conf.txt
+			  echo ${name}, >> conf.txt
+			  echo ${version}, >> conf.txt
+			  echo ${source}  >> conf.txt
 			  """
 			}
             }

@@ -1,0 +1,19 @@
+CURL commands for testing and demo purposes
+++++++++++++++++++++++++++++++++++++++++++
+
+diabetes data set
+AGE	SEX	BMI	BP	S1	S2	S3	S4	S5	S6	Y
+59	2	32.1	101	157	93.2	38	4	4.8598	87	151
+48	1	21.6	87	183	103.2	70	3	3.8918	69	75
+
+$ curl http://127.0.0.1:8080/forecast -H 'Content-Type: application/json' -d '{
+    "columns": ["AGE", "SEX", "BMI","BP", "S1", "S2","S3","S4","S5","S6","Y"],
+    "data": [[59,2,32.1,101,157,93.2,38,4,4.8598,87,151],
+            [48,1,21.6,	87,	183,103.2,70,3,3.8918,69,75]]
+}'
+
+
+$ curl http://127.0.0.1:8080/forecast -H 'Content-Type: application/json' -d '{
+    "columns": ["AGE", "SEX", "BMI","BP", "S1", "S2","S3","S4","S5","S6"],
+    "data": [[59,2,32.1,101,157,93.2,38,4,4.8598,87]]
+}'

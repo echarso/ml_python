@@ -19,7 +19,6 @@ def root():
 @app.route("/forecast",methods = ['POST' ])
 def forecast():
     print('forecast api')
-
     print(request.data)
     print(request.get_json())
     print('--------------------------------')

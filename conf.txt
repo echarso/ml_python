@@ -1,0 +1,3 @@
+foo_name,
+foo_version,
+foo_source
