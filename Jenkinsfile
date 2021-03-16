@@ -21,6 +21,8 @@ pipeline {
 			  echo ${name}, >> conf.txt
 			  echo ${version}, >> conf.txt
 			  echo ${source}  >> conf.txt
+			  cat conf.txt
+			  ls
 			  """
 			}
             }

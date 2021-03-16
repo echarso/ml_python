@@ -6,7 +6,7 @@ import pandas as pd
 class Controller:
 
     def __init__(self):
-        print( "Create controller!!!!!")
+        print( "Create controller  with configuration file !!!!!")
         f = open("conf.txt", "r")
         conf = f.read()
         conf = conf.split(',\n')
