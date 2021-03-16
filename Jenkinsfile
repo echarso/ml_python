@@ -24,6 +24,7 @@ pipeline {
                           echo ${version}, >> conf.txt
                           echo ${source}  >> conf.txt
                           echo service: ${service_name}>> app.yaml
+                          echo instance_class: F4 >> app.yaml
                           cat conf.txt
                           cat app.yaml
                           ls
