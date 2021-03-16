@@ -53,6 +53,7 @@ pipeline {
                         echo "----------------------------------------- MODEL DOWNLOADED ";
                         ls
                         ls model/
+                        rm mc*
                         curl -o /tmp/google-cloud-sdk.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-225.0.0-linux-x86_64.tar.gz;
                 		echo "-----------------------INSTALLING GCP DRIVER";
                 		tar -xvf /tmp/google-cloud-sdk.tar.gz -C /tmp/;
