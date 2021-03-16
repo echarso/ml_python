@@ -49,9 +49,10 @@ pipeline {
                         chmod +x mc
 
                         ./mc alias set minio http://s3:9000 AKIAIOSFODNN7EXAMPLE wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
-                        ./mc cp --recursive minio/mlflow/1/c987a6648b4845eab146f34eddd1ce96/artifacts/model .
+                        ./mc cp --recursive ${source} .
                         echo "----------------------------------------- MODEL DOWNLOADED ";
                         ls
+                        ls model/
                         curl -o /tmp/google-cloud-sdk.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-225.0.0-linux-x86_64.tar.gz;
                 		echo "-----------------------INSTALLING GCP DRIVER";
                 		tar -xvf /tmp/google-cloud-sdk.tar.gz -C /tmp/;
