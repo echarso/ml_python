@@ -3,9 +3,9 @@ node()
     print "DEBUG: parameter foo = ${name}"
     print "DEBUG: parameter version = ${version}"
     print "DEBUG: parameter location = ${source}"
-    print "DEBUG: parameter GOOGLE_SERVICE_ACCOUNT_KEY ${GOOGLE_SERVICE_ACCOUNT_KEY}"
-    print "DEBUG: parameter GOOGLE_PROJECT_ID ${GOOGLE_PROJECT_ID}"
-    print "DEBUG: parameter service-name ${service-name}"
+    print "DEBUG: parameter GOOGLE_SERVICE_ACCOUNT_KEY = ${GOOGLE_SERVICE_ACCOUNT_KEY}"
+    print "DEBUG: parameter GOOGLE_PROJECT_ID = ${GOOGLE_PROJECT_ID}"
+    print "DEBUG: parameter service_name = ${service_name}"
 
 
 
@@ -23,7 +23,7 @@ pipeline {
                           echo ${name}, >> conf.txt
                           echo ${version}, >> conf.txt
                           echo ${source}  >> conf.txt
-                          echo service: ${service-name}>> app.yaml
+                          echo service: ${service_name}>> app.yaml
                           cat conf.txt
                           cat app.yaml
                           ls
