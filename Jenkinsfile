@@ -5,6 +5,8 @@ node()
     print "DEBUG: parameter location = ${source}"
     print "DEBUG: parameter GOOGLE_SERVICE_ACCOUNT_KEY ${GOOGLE_SERVICE_ACCOUNT_KEY}"
     print "DEBUG: parameter GOOGLE_PROJECT_ID ${GOOGLE_PROJECT_ID}"
+    print "DEBUG: parameter service-name ${service-name}"
+
 
 
 }
@@ -13,18 +15,20 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                print "DEBUG: parameter build "
-		script {
-			  sh """
-			  python --version
-			  rm conf.txt
-			  echo ${name}, >> conf.txt
-			  echo ${version}, >> conf.txt
-			  echo ${source}  >> conf.txt
-			  cat conf.txt
-			  ls
-			  """
-			}
+                    print "DEBUG: parameter build "
+                    script {
+                          sh """
+                          python --version
+                          rm conf.txt
+                          echo ${name}, >> conf.txt
+                          echo ${version}, >> conf.txt
+                          echo ${source}  >> conf.txt
+                          echo service: ${service-name}>> app.yaml
+                          cat conf.txt
+                          cat app.yaml
+                          ls
+                          """
+                        }
             }
         }
         stage('Test') {

@@ -4,6 +4,7 @@ import json
 from flask import Flask, request
 from flask import render_template
 from controller import Controller
+from memory_profiler import profile
 
 app = Flask(__name__)
 con = Controller();
@@ -15,7 +16,7 @@ def root():
     return render_template('index.html')
 
 
-
+@profile
 @app.route("/forecast",methods = ['POST' ])
 def forecast():
     print('forecast api')

@@ -1,3 +1,2 @@
 runtime: python37
-service: mlops
 instance_class: F4
