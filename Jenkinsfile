@@ -55,7 +55,7 @@ pipeline {
                         cd ..
                         echo "----------------------------------------- MINIO DOWNLOAD OF THE MODEL";
                         cd model
-                        rm *.*
+                        rm *.* .
                         cd ..
                         wget https://dl.min.io/client/mc/release/linux-amd64/mc
                         chmod +x mc
