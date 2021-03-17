@@ -48,8 +48,15 @@ pipeline {
                 				sh """
                 		#!/bin/bash
                         echo "---------- START -------------------------------";
+                        echo "---------- clean model folder -------------------------------";
 
+                        cd model
+                        rm *.*
+                        cd ..
                         echo "----------------------------------------- MINIO DOWNLOAD OF THE MODEL";
+                        cd model
+                        rm *.*
+                        cd ..
                         wget https://dl.min.io/client/mc/release/linux-amd64/mc
                         chmod +x mc
 
