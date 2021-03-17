@@ -83,6 +83,10 @@ pipeline {
                         echo service: ${service_name}>> app.yaml
                         echo instance_class: F2 >> app.yaml
                         cat app.yaml
+                        rm conf.txt
+                        echo ${name}, >> conf.txt
+                        echo ${version}, >> conf.txt
+                        echo ${source}  >> conf.txt
 
                 		/tmp/google-cloud-sdk/bin/gcloud app deploy -q;
 
