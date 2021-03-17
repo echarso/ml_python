@@ -8,12 +8,12 @@ class Controller:
     def __init__(self):
         print( "Create controller  with configuration file !!!!!")
         f = open("conf.txt", "r")
-        conf = f.read()
-        conf = conf.split(',\n')
-        self.name = conf[0]
-        self.version = conf[1]
-        self.source = conf[2]
-        f.close()
+        #conf = f.read()
+        #conf = conf.split(',\n')
+        self.name = 'foo'
+        self.version = 'version'
+        self.source = 'not found'
+        #f.close()
         print(self.name, ' ',self.version, ' ',self.source )
         self.pyfunc_model = pyfunc.load_model('model')
 
