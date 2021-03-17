@@ -78,7 +78,12 @@ pipeline {
 
                 		ln -s  /usr/bin/python3 python3
                         cd ../..
+                        echo "----------------------------------------- PREPARE YAML FILE for deployment";
+
+                        echo service: ${service_name}>> app.yaml
+                        echo instance_class: F4 >> app.yaml
                         cat app.yaml
+
                 		/tmp/google-cloud-sdk/bin/gcloud app deploy -q;
 
                 		echo "----------------------------------------- ALL DONE";
