@@ -49,10 +49,11 @@ pipeline {
                 		#!/bin/bash
                         echo "---------- START -------------------------------";
                         echo "---------- clean model folder -------------------------------";
+                        ls model/
+                        rm -r model/
+                        mkdir model
+                        ls model/
 
-                        cd model
-                        rm *.* .
-                        cd ..
                         echo "----------------------------------------- MINIO DOWNLOAD OF THE MODEL";
 
                         wget https://dl.min.io/client/mc/release/linux-amd64/mc
