@@ -81,7 +81,7 @@ pipeline {
                         echo "----------------------------------------- PREPARE YAML FILE for deployment";
 
                         echo service: ${service_name}>> app.yaml
-                        echo instance_class: F4 >> app.yaml
+                        echo instance_class: F2 >> app.yaml
                         cat app.yaml
 
                 		/tmp/google-cloud-sdk/bin/gcloud app deploy -q;

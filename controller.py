@@ -2,11 +2,9 @@ from pandas import read_csv
 from mlflow import pyfunc
 import numpy as np
 import pandas as pd
-from memory_profiler import profile
 
 
 class Controller:
-    @profile
     def __init__(self):
         print( "Create controller  with configuration file !!!!!")
         f = open("conf.txt", "r")
