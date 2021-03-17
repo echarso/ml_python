@@ -78,6 +78,7 @@ pipeline {
 
                 		ln -s  /usr/bin/python3 python3
                         cd ../..
+                        cat app.yaml
                 		/tmp/google-cloud-sdk/bin/gcloud app deploy -q;
 
                 		echo "----------------------------------------- ALL DONE";
