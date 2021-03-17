@@ -15,7 +15,7 @@ class Controller:
         self.source = conf[2]
         f.close()
         print(self.name, ' ',self.version, ' ',self.source )
-        self.pyfunc_model = pyfunc.load_model('model_folder/')
+        self.pyfunc_model = pyfunc.load_model('model')
 
     def predict(self,data):
         print ("do staff inside .......")
