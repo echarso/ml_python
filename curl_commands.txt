@@ -17,3 +17,14 @@ $ curl http://127.0.0.1:8080/forecast -H 'Content-Type: application/json' -d '{
     "columns": ["AGE", "SEX", "BMI","BP", "S1", "S2","S3","S4","S5","S6"],
     "data": [[59,2,32.1,101,157,93.2,38,4,4.8598,87]]
 }'
+
+
+wine curl commands
+
+["fixed acidity","volatile acidity","citric acid","residual sugar","chlorides","free sulfur dioxide","total sulfur dioxide","density","pH","sulphates","alcohol"]
+7,0.27,0.36,20.7,0.045,45,170,1.001,3,0.45,8.8,6
+
+curl http://127.0.0.1:8080/forecast -H 'Content-Type: application/json' -d '{
+    "columns": ["fixed acidity","volatile acidity","citric acid","residual sugar","chlorides","free sulfur dioxide","total sulfur dioxide","density","pH","sulphates","alcohol"],
+    "data": [[7,0.27,0.36,20.7,0.045,45,170,1.001,3,0.45,8.8]]
+}'

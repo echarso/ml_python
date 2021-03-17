@@ -1,3 +1,6 @@
 tean-285020-00b491b26afe.json
 model_folder/
 __pycache__/
+model/MLmodel
+model/conda.yaml
+model/model.pkl
