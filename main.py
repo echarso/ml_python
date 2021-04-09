@@ -1,6 +1,5 @@
 #! /usr/bin/env python
 import json
-import json
 from flask import Flask, request
 from flask import render_template
 from controller import Controller

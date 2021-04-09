@@ -1,14 +1,15 @@
 from sklearn.datasets import load_diabetes
 from sklearn.model_selection import train_test_split
-
+import pandas as pd
 import mlflow
 
 
 
-
-data_d= load_diabetes()
+data_d = load_diabetes()
+pd.DataFrame(data_d.data).to_csv("diabetes_data.csv")
 data = data_d.data
-target=data_d.target
+target = data_d.target
+
 
 target = target-target.mean(axis=0)/target.std()
 train_data , test_data , train_target, test_target = train_test_split(data,target,
@@ -62,7 +63,6 @@ def get_regularized_model(wd,rate):
     ])
     return model
 #model = get_model()
-print(train_data.shape[1],)
 model = get_regularized_model(1e-5,0.3)
 
 model.compile(optimizer='adam',loss='mse',metrics=['mae'])
@@ -81,6 +81,7 @@ with mlflow.start_run():
                                tf_meta_graph_tags=['serve'],
                                tf_signature_def_key='serving_default',
                                artifact_path='tensor')
+    mlflow.log_artifact('diabetes_data.csv')
     mlflow.end_run()
     #run_id = mlflow.active_run().info.run_id
     #artifact_path='model'

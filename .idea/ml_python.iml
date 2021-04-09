@@ -8,5 +8,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="mlflow" />
     <orderEntry type="module" module-name="mlops" />
+    <orderEntry type="module" module-name="pythonProject" />
+    <orderEntry type="module" module-name="serving-mlflow-template" />
   </component>
 </module>

@@ -3,8 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/ml_python.iml" filepath="$PROJECT_DIR$/.idea/ml_python.iml" />
-      <module fileurl="file://$USER_HOME$/mlflow/.idea/mlflow.iml" filepath="$USER_HOME$/mlflow/.idea/mlflow.iml" />
-      <module fileurl="file://$USER_HOME$/mlops/.idea/mlops.iml" filepath="$USER_HOME$/mlops/.idea/mlops.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../mlflow/.idea/mlflow.iml" filepath="$PROJECT_DIR$/../mlflow/.idea/mlflow.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../mlops/.idea/mlops.iml" filepath="$PROJECT_DIR$/../mlops/.idea/mlops.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../PycharmProjects/pythonProject/.idea/pythonProject.iml" filepath="$PROJECT_DIR$/../PycharmProjects/pythonProject/.idea/pythonProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../PycharmProjects/serving-mlflow-template/.idea/serving-mlflow-template.iml" filepath="$PROJECT_DIR$/../PycharmProjects/serving-mlflow-template/.idea/serving-mlflow-template.iml" />
     </modules>
   </component>
 </project>

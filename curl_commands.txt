@@ -31,7 +31,7 @@ curl http://127.0.0.1:8080/forecast -H 'Content-Type: application/json' -d '{
 
 http://elastic-final-dot-tean-285020.oa.r.appspot.com/forecast
 https://demo-elastic-wine-service-dot-tean-285020.oa.r.appspot.com/
-curl http://elastic-final-dot-tean-285020.oa.r.appspot.com/forecast -H 'Content-Type: application/json' -d '{
+curl http://demo-now-dot-tean-285020.oa.r.appspot.com/forecast -H 'Content-Type: application/json' -d '{
     "columns": ["fixed acidity","volatile acidity","citric acid","residual sugar","chlorides","free sulfur dioxide","total sulfur dioxide","density","pH","sulphates","alcohol"],
     "data": [[7,0.27,0.36,20.7,0.045,45,170,1.001,3,0.45,8.8]]
 }'

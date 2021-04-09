@@ -4,3 +4,12 @@ __pycache__/
 model/MLmodel
 model/conda.yaml
 model/model.pkl
+.ipynb_checkpoints/
+diabetes_data.csv
+mlruns/
+tensor/
+tensor/MLmodel
+tensor/conda.yaml
+tensor/tfmodel/saved_model.pb
+tensor/tfmodel/variables/variables.data-00000-of-00001
+tensor/tfmodel/variables/variables.index
